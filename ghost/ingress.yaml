@@ -7,9 +7,9 @@ metadata:
 #    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 #    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
-#  tls:
-#    - hosts:
-#        - chevrutah.com
+  tls:
+    - hosts:
+        - chevrutah.com
   rules:
     - host: shpiel.chevrutah.com
       http:
