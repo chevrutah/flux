@@ -2,20 +2,21 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: corona-ingress
+  namespace: corona
   annotations:
     kubernetes.io/ingress.class: "nginx"
-#    cert-manager.io/cluster-issuer: "letsencrypt-prod"
-#    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 #    nginx.ingress.kubernetes.io/proxy-body-size: '20m'
 #    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
-#  tls:
-#    - hosts:
-#      - shpiel.chevrutah.com
-#      secretName: shpiel-chevrutah-tls
+  tls:
+    - hosts:
+      - schmooze.chevrutah.com
+      secretName: schmooze-chevrutah-tls
   rules:
-#    - host: shpiel.chevrutah.com
-    - http:
+    - host: schmooze.chevrutah.com
+      http:
         paths:
           - path: /corona
             backend:

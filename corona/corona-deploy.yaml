@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: corona-app
+  namespace: corona
+  annotations:
+    fluxcd.io/automated: "true"  
 spec:
   replicas: 1
   selector:
@@ -14,7 +17,7 @@ spec:
     spec:
       containers:
       - name: corona
-        image: ilanpillemer/corona
+        image: ilanpillemer/corona:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
