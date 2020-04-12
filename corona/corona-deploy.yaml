@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   annotations:
     fluxcd.io/automated: "true"
+    fluxcd.io/tag.corona: glob:*
   name: corona-app
   namespace: corona
 spec:
