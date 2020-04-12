@@ -1,18 +1,21 @@
- apiVersion: extensions/v1beta1
- kind: Deployment
- metadata:
-   name: corona-app
-   namespace: corona
- spec:
-   replicas: 1
-   template:
-     metadata:
-       labels:
-         app: corona-app
-     spec:
-       containers:
-       - name: corona
-         image: ilanpillemer/corona
-         imagePullPolicy: Always
-         ports:
-         - containerPort: 8080
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: corona-app
+  namespace: corona
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: corona-app  
+  template:
+    metadata:
+      labels:
+        app: corona-app
+    spec:
+      containers:
+      - name: corona
+        image: ilanpillemer/corona
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
