@@ -4,12 +4,12 @@ metadata:
   name: corona-app
   namespace: corona
   annotations:
-    fluxcd.io/automated: "true"  
+    flux.weave.works/automated: "true"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: corona-app  
+      app: corona-app
   template:
     metadata:
       labels:
@@ -18,6 +18,5 @@ spec:
       containers:
       - name: corona
         image: ilanpillemer/corona:88912220
-        imagePullPolicy: Always
         ports:
         - containerPort: 8080
