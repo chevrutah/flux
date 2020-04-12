@@ -17,7 +17,7 @@ spec:
 #    - host: shpiel.chevrutah.com
     - http:
         paths:
-          - path: /
+          - path: /corona
             backend:
-              serviceName: corona
+              serviceName: corona-service
               servicePort: 80
