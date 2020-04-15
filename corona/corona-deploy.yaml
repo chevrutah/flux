@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: corona
-        image: ilanpillemer/corona:d9bfaec6
+        image: ilanpillemer/corona:965881ce
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
