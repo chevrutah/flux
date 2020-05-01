@@ -8,7 +8,7 @@ metadata:
   name: corona-app
   namespace: corona
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: corona-app
