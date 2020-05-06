@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.corona: glob:*
+  name: health-app
+  namespace: health
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: health-app
+  template:
+    metadata:
+      labels:
+        app: health-app
+    spec:
+      containers:
+      - name: corona
+        image: ilanpillemer/health:5913aee3
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8877
