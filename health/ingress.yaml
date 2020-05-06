@@ -8,7 +8,7 @@ metadata:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 #    nginx.ingress.kubernetes.io/proxy-body-size: '20m'
-#    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   tls:
     - hosts:
@@ -18,7 +18,7 @@ spec:
     - host: schmooze.chevrutah.com
       http:
         paths:
-          - path: /health
+          - path: /health(/|$)(.*)
             backend:
               serviceName: health-service
               servicePort: 80
