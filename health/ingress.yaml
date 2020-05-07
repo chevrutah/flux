@@ -12,10 +12,10 @@ metadata:
 spec:
   tls:
     - hosts:
-      - schmooze.chevrutah.com
-      secretName: schmooze-chevrutah-tls
+      - health.chevrutah.com
+      secretName: health-chevrutah-tls
   rules:
-    - host: schmooze.chevrutah.com
+    - host: health.chevrutah.com
       http:
         paths:
           - path: /health
