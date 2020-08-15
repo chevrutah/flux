@@ -14,6 +14,9 @@ spec:
     - hosts:
       - health.chevrutah.com
       secretName: health-chevrutah-tls
+    - hosts:
+      - health.ilanpillemer.com
+      secretName: health-chevrutah-tls      
   rules:
     - host: health.chevrutah.com
       http:
@@ -22,3 +25,10 @@ spec:
             backend:
               serviceName: health-service
               servicePort: 80
+    - host: health.ilanpillemer.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: health-service
+              servicePort: 80	      

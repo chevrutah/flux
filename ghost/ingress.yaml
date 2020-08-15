@@ -13,6 +13,7 @@ spec:
     - hosts:
       - shpiel.chevrutah.com
       secretName: shpiel-chevrutah-tls
+    - hosts:      
       - pillemer.org
       secretName: shpiel-chevrutah-tls
   rules:
