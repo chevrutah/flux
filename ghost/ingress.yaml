@@ -13,8 +13,17 @@ spec:
     - hosts:
       - shpiel.chevrutah.com
       secretName: shpiel-chevrutah-tls
+      - pillemer.org
+      secretName: shpiel-chevrutah-tls
   rules:
     - host: shpiel.chevrutah.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: ghost-first
+              servicePort: 80
+    - host: pillemer.org
       http:
         paths:
           - path: /
